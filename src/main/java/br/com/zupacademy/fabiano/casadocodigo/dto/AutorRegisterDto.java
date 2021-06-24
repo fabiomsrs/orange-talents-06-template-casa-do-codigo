@@ -1,12 +1,14 @@
 package br.com.zupacademy.fabiano.casadocodigo.dto;
 
 import br.com.zupacademy.fabiano.casadocodigo.modelo.Autor;
+import br.com.zupacademy.fabiano.casadocodigo.validator.AutorEmailDuplicado;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+@AutorEmailDuplicado
 public class AutorRegisterDto {
     @NotNull
     @NotEmpty
