@@ -1,10 +1,8 @@
 package br.com.zupacademy.fabiano.casadocodigo.controller;
 
-import br.com.zupacademy.fabiano.casadocodigo.dto.CategoriaRegisterDto;
 import br.com.zupacademy.fabiano.casadocodigo.dto.LivroDetalheDto;
 import br.com.zupacademy.fabiano.casadocodigo.dto.LivroDto;
 import br.com.zupacademy.fabiano.casadocodigo.dto.LivroRegisterDto;
-import br.com.zupacademy.fabiano.casadocodigo.modelo.Categoria;
 import br.com.zupacademy.fabiano.casadocodigo.modelo.Livro;
 import br.com.zupacademy.fabiano.casadocodigo.repository.AutorRepository;
 import br.com.zupacademy.fabiano.casadocodigo.repository.CategoriaRepository;
