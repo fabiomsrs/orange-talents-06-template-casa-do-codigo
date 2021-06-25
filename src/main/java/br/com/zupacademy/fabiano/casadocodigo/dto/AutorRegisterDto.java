@@ -24,6 +24,9 @@ public class AutorRegisterDto {
     @Length(max = 400)
     private String descricao;
 
+    public AutorRegisterDto() {
+    }
+
     public AutorRegisterDto(@NotNull @NotEmpty String nome,
                             @NotNull @NotEmpty @Email(message = "E-mail inválido!") String email,
                             @NotNull @NotEmpty @Length(max = 400) String descricao) {
