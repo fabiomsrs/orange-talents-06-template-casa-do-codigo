@@ -38,6 +38,7 @@ public class Autor {
 
     public Autor(){
     }
+
     public Autor(@NotNull @NotEmpty String nome,
                  @NotNull @NotEmpty @Email(message = "E-mail inválido!") String email,
                  @NotNull @NotEmpty @Length(max = 400) String descricao) {

@@ -19,6 +19,7 @@ public class Categoria {
     public Categoria() {
     }
 
+
     public Categoria(@NotNull @NotEmpty String nome) {
         this.nome = nome;
     }
