@@ -1,6 +1,7 @@
 package br.com.zupacademy.fabiano.casadocodigo.controller;
 
 import br.com.zupacademy.fabiano.casadocodigo.dto.CategoriaRegisterDto;
+import br.com.zupacademy.fabiano.casadocodigo.dto.LivroDto;
 import br.com.zupacademy.fabiano.casadocodigo.dto.LivroRegisterDto;
 import br.com.zupacademy.fabiano.casadocodigo.modelo.Categoria;
 import br.com.zupacademy.fabiano.casadocodigo.modelo.Livro;
@@ -9,12 +10,10 @@ import br.com.zupacademy.fabiano.casadocodigo.repository.CategoriaRepository;
 import br.com.zupacademy.fabiano.casadocodigo.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/livros")
@@ -33,5 +32,11 @@ public class LivroController {
         Livro livro = dto.converter(autorRepository, categoriaRepository);
         repository.save(livro);
         return ResponseEntity.ok(livro);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<LivroDto>> listar(){
+        List<Livro> livros = repository.findAll();
+        return ResponseEntity.ok(LivroDto.converter(livros));
     }
 }
