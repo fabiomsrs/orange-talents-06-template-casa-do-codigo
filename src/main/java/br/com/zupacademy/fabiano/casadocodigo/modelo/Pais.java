@@ -1,8 +1,11 @@
 package br.com.zupacademy.fabiano.casadocodigo.modelo;
 
+import br.com.zupacademy.fabiano.casadocodigo.repository.EstadoRepository;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 public class Pais {
@@ -28,5 +31,9 @@ public class Pais {
 
     public String getNome() {
         return nome;
+    }
+
+    public boolean temEstados(EstadoRepository estadoRepository) {
+        return !estadoRepository.findByPais_Id(this.id).isEmpty();
     }
 }

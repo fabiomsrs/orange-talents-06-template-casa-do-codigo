@@ -38,4 +38,8 @@ public class Estado {
     public Pais getPais() {
         return pais;
     }
+
+    public boolean pertence(Long pais) {
+        return this.pais.getId() == pais;
+    }
 }
