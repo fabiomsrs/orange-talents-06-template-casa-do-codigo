@@ -44,6 +44,7 @@ public class ClienteRegisterDto {
     @NotNull
     @ChecaExistencia(identityField = "id", instanceClass = Categoria.class)
     private Long pais;
+    @ChecaExistencia(identityField = "id", instanceClass = Categoria.class)
     private Long estado;
     @NotNull
     @NotEmpty

@@ -23,6 +23,9 @@ public class ChecaExistenciaValidator implements ConstraintValidator<ChecaExiste
 
     @Override
     public boolean isValid(Object value, ConstraintValidatorContext context) {
+        if (value == null){
+            return true;
+        }
         return !this.em.createQuery("select 1 from "+this.object.getName()+" where "+ this.identityField + "=:field")
                 .setParameter("field",value)
                 .getResultList()
