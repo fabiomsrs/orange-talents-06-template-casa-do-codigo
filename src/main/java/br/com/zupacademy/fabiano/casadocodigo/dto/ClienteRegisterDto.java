@@ -42,9 +42,9 @@ public class ClienteRegisterDto {
     @NotEmpty
     private String cidade;
     @NotNull
-    @ChecaExistencia(identityField = "id", instanceClass = Categoria.class)
+    @ChecaExistencia(identityField = "id", instanceClass = Pais.class)
     private Long pais;
-    @ChecaExistencia(identityField = "id", instanceClass = Categoria.class)
+    @ChecaExistencia(identityField = "id", instanceClass = Estado.class)
     private Long estado;
     @NotNull
     @NotEmpty
